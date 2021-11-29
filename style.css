@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap');
+
+html,
+body {
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  margin: auto;
+  display: block;
+  padding: 20px;
+  background: white;
+    )repeat;
+}
+
+/*Canvas style is used for styling the three.js window*/
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  max-width: 800px;
+  border: 3px solid white;
+  border-radius: 3px;
+}
+
+#space2 {
+  width: 525px;
+  height: 500px;
+  margin: auto;
+}
+
+h1 {
+  font-style: bold;
+  color: #85C1E9;
+  max-width: 75%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+h2 {
+  color: #FFBBBB;
+  max-width: 75%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+p {
+  width: 50%;
+  max-width: 75%;
+  font-weight: 500;
+  padding: 0px;
+  padding-left: 25%;
+  padding-bottom: 20px;
+  line-height: 150%;
+}
+
+p.mid {
+  padding-left: 0%;
+  text-align: center;
+  margin: auto;
+}
+
+a {
+  color: #735223;
+}
