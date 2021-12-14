@@ -7,7 +7,7 @@ import {
 import { GLTFLoader } from "./src/GLTFLoader.js";
 
 // Establish variables
-let container, scene, camera, renderer, mesh1, mesh2, mesh3, mesh4, mixer1, mixer2, mixer3, mixer4, controls, clock;
+let container, scene, camera, renderer, mesh1, mixer1, controls, clock;
 let ticker = 0;
 const objects = [];
 let raycaster;
@@ -142,6 +142,7 @@ function init() {
     10
   );
 
+
   const loader1 = new GLTFLoader().load(
     "./assets/duck4.glb", // comment this line out and un comment the line below to swithc models
     function (gltf) {
@@ -166,8 +167,6 @@ function init() {
     }
   );
 
-
-
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({
     antialias: true, alpha: true
@@ -177,7 +176,6 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x138999, 12);
-  // renderer.setClearColor(0xa17a99, 1.9);
   document.body.appendChild(renderer.domElement);
 
   // Listen for window resizing
