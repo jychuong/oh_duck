@@ -45,7 +45,7 @@ function init() {
   );
   camera.position.y = 0;
   // camera.position.x = 6;
-  camera.position.z = 120;
+  camera.position.z = 150;
 
 
 
@@ -76,6 +76,11 @@ function init() {
   controls.addEventListener("lock", function () {
     instructions.style.display = "none";
     blocker.style.display = "none";
+  });
+  // Restore overlays and stop controls on esc
+  controls.addEventListener("unlock", function () {
+    blocker.style.display = "block";
+    instructions.style.display = "";
   });
   // Add controls to scene
   scene.add(controls.getObject());
@@ -178,6 +183,7 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x138999, 12);
+  // renderer.setClearColor(0xa17a99, 1.9);
   document.body.appendChild(renderer.domElement);
 
   // Listen for window resizing
