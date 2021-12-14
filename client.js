@@ -1,9 +1,4 @@
-// Art 109 Three.js Demo Site
-// client7.js
-// A three.js scene which uses planes and texture loading to generate a scene with images which can be traversed with basic WASD and mouse controls, this scene is full screen with an overlay.
 
-// Import required source code
-// Import three.js core
 import * as THREE from "./build/three.module.js";
 // Import pointer lock controls
 import {
@@ -12,7 +7,7 @@ import {
 import { GLTFLoader } from "./src/GLTFLoader.js";
 
 // Establish variables
-let container, scene, camera, renderer, mesh1, mixer1, controls, clock;
+let container, scene, camera, renderer, mesh1, mesh2, mesh3, mesh4, mixer1, mixer2, mixer3, mixer4, controls, clock;
 let ticker = 0;
 const objects = [];
 let raycaster;
@@ -43,21 +38,18 @@ function init() {
     1,
     1000
   );
-  camera.position.y = 0;
+  // camera.position.y = 50;
   // camera.position.x = 6;
-  camera.position.z = 150;
-
-
+  camera.position.z = 40;
 
   // Define basic scene parameters
   scene = new THREE.Scene();
 
-  scene.fog = new THREE.Fog(0x7985ba, 0, 200);
+  scene.fog = new THREE.Fog(0x7985ba, 100, 250);
 
   // Add an ambient light to the scene
-  const ambientLight = new THREE.AmbientLight(0xffffff, 5);
+  const ambientLight = new THREE.AmbientLight(0x87ceeb, 0.9);
   scene.add(ambientLight);
-
 
   // Define controls
   controls = new PointerLockControls(camera, document.body);
@@ -144,18 +136,20 @@ function init() {
 
   // Add raycasting for mouse controls
   raycaster = new THREE.Raycaster(
+    new THREE.Vector3(),
     new THREE.Vector3(0, -1, 0),
     0,
     10
   );
 
   const loader1 = new GLTFLoader().load(
-    "./assets/ducks.glb", // comment this line out and un comment the line below to swithc models
+    "./assets/duck3glb.glb", // comment this line out and un comment the line below to swithc models
     function (gltf) {
       // set position and scale
       mesh1 = gltf.scene;
       mesh1.position.set(0, 0, 0);
-      mesh1.scale.set(5, 5, 5);
+      mesh1.rotation.set(0, 0, 0);
+      // mesh1.scale.set(5, 5, 5);
 
       // Add model to scene
       scene.add(mesh1);
@@ -198,15 +192,12 @@ function onWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-
-
 // Animation function
 function animate() {
 
   requestAnimationFrame(animate);
   var delta = clock.getDelta();
   if (mixer1) mixer1.update(delta);
-
 
   const time = performance.now();
 
