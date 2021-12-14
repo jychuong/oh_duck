@@ -143,7 +143,7 @@ function init() {
   );
 
   const loader1 = new GLTFLoader().load(
-    "./assets/duck3glb.glb", // comment this line out and un comment the line below to swithc models
+    "./assets/duck4.glb", // comment this line out and un comment the line below to swithc models
     function (gltf) {
       // set position and scale
       mesh1 = gltf.scene;
