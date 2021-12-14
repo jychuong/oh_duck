@@ -7,7 +7,6 @@ body {
   display: block;
   padding: 20px;
   background: white;
-    )repeat;
 }
 
 /*Canvas style is used for styling the three.js window*/
@@ -21,6 +20,11 @@ canvas {
   border-radius: 3px;
 }
 
+img{
+  width: 100%;
+  height: 100%;
+}
+
 #space2 {
   width: 525px;
   height: 500px;
@@ -31,9 +35,10 @@ h1 {
   font-style: bold;
   color: #85C1E9;
   max-width: 75%;
+  font-size: 80px;
   text-align: center;
   margin: auto;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 h2 {
@@ -41,13 +46,14 @@ h2 {
   max-width: 75%;
   text-align: center;
   margin: auto;
+  font-size: 30px;
   padding-bottom: 20px;
 }
 
 p {
   width: 50%;
   max-width: 75%;
-  font-weight: 500;
+  font-weight: 800;
   padding: 0px;
   padding-left: 25%;
   padding-bottom: 20px;
@@ -61,5 +67,6 @@ p.mid {
 }
 
 a {
-  color: #735223;
+  font-size: 20px;
+  color: #85C1E9;
 }
